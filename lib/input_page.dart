@@ -18,28 +18,39 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 Expanded(
-                  child: ReusableCard(),
+                  child: ReusableCard(
+                    colour: Color(0xFF1D1E33),
+                  ),
                 ),
                 Expanded(
-                  child: ReusableCard(),
+                  child: ReusableCard(
+                    colour: Color(0xFF1D1E33),
+                  ),
                 ),
               ],
             ),
           ),
           Expanded(
-            child: ReusableCard(),
+            child: ReusableCard(
+              colour: Color(0xFF1D1E33),
+            ),
           ),
           Expanded(
-              child: Row(
-            children: [
-              Expanded(
-                child: ReusableCard(),
-              ),
-              Expanded(
-                child: ReusableCard(),
-              ),
-            ],
-          ))
+            child: Row(
+              children: [
+                Expanded(
+                  child: ReusableCard(
+                    colour: Color(0xFF1D1E33),
+                  ),
+                ),
+                Expanded(
+                  child: ReusableCard(
+                    colour: Color(0xFF1D1E33),
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
@@ -47,16 +58,15 @@ class _InputPageState extends State<InputPage> {
 }
 
 class ReusableCard extends StatelessWidget {
-  const ReusableCard({
-    super.key,
-  });
+  ReusableCard({required this.colour});
+  final Color colour;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: Color(0xFF1D1E33),
+        color: colour,
       ),
       margin: EdgeInsets.all(15),
     );
